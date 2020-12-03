@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Daycareapp";
+}
+
+<div class="text-center">
+    <h1>Video Blogs</h1>
+</div>
+
+<p></p>
+<div class="row">
+    <div class="col-sm-6">
+        <iframe width="500" height="300" src="https://www.youtube.com/embed/sON2insu3NU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       
+        <div class="text-center">
+            @foreach (var item in (IEnumerable<string>)ViewData["Video1"])
+            {
+
+                    <div>@item.ToString()</div>         
+
+            }
+        </div>
+
+    </div>
+
+    <div class="col-sm-6">
+        <iframe width="500" height="300" src="https://www.youtube.com/embed/ywcNsJb2v2U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="text-center">
+            @foreach (var item in (IEnumerable<string>)ViewData["Video2"])
+            {
+
+                <div>@item.ToString()</div>
+
+            }
+        </div>
+
+    </div>
+
+
+
+</div>

@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewBag.Welcome, @ViewBag.UserNew.FirstName @ViewBag.UserNew.LastName</h1>
+    <h1>TO ANIMAL RESCUE DAYCARE SHELTER</h1>
+</div>
+
+<div>
+
+    <img src="/lib/images/coverphoto.jpg" />
+
+</div>
+
+<div class="text-center">
+    @foreach (var item in (IEnumerable<string>)ViewData["Conditions"])
+    {
+        if (item.ToString().Contains("Heading")) // makes anything with the word heading in a line in the txt file into h3
+        {
+            <div>
+                <h3>@item.ToString().Replace("Heading", "");</h3>
+            </div>
+        }
+
+
+        else
+        {
+            <div>@item.ToString()</div>
+        }
+
+
+    }
+</div>
